@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.record {
+  margin: auto;
+//  border: 1px solid black;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  //background-color: coral;
+  color: white;
+  // clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+  display: inline-block;
+}
+
+
+</style>
+</head>
+<body>
+<script>
+let rotate = 0;
+let disks = ["pink", "purple", "yellow"];
+
+
+
+disks.forEach(createObject);
+
+function createObject(disk) {
+  let theta = 0;
+
+  var container = document.body
+  var div, img;
+
+  div = document.createElement('div');
+  div.class = "record";
+  div.id = disk;
+  div.width = 200;
+  div.height = 200;
+  div.style.display = "inline-block";
+  container.appendChild(div);
+  img = document.createElement('img');
+  img.setAttribute('src', disk + ".png");
+  div.appendChild(img);
+  div.addEventListener("click", function() { alert("Disk " + disk + " clicked!"); });
+
+  div.addEventListener("mouseenter", function() {div.style.transform = "rotate(" + theta + "deg)";
+                                                 theta = (theta+2.7) % 360; 
+                                                 rotate = setInterval(function(){ div.style.transform = "rotate(" + theta + "deg)";
+                                                 theta = (theta+2.7) % 360 }, 10);});
+  div.addEventListener("mouseleave", stopRotation);
+}
+
+function stopRotation() {
+  clearInterval(rotate);
+}
+</script>
+</body>
+</html>
