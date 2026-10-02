@@ -1,0 +1,18 @@
+<html>
+<body>
+<div id="observablehq-7405eafe">
+  <div class="observablehq-viewof-selected_indicator"></div>
+  <div class="observablehq-viewof-anim_frame_year"></div>
+  <div class="observablehq-chart"></div>
+</div>
+<script type="module">
+  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+  import define from "https://api.observablehq.com/@theohonohan/birthright-indicators-1985-2020-version-of-16-june.js?v=3";
+  (new Runtime).module(define, name => {
+    if (name === "viewof selected_indicator") return Inspector.into("#observablehq-7405eafe .observablehq-viewof-selected_indicator")();
+    if (name === "viewof anim_frame_year") return Inspector.into("#observablehq-7405eafe .observablehq-viewof-anim_frame_year")();
+    if (name === "chart") return Inspector.into("#observablehq-7405eafe .observablehq-chart")();
+  });
+</script>
+</body>
+</html>
