@@ -1,12 +1,22 @@
 <html>
 <body>
-<div style="width: 85%; height: 800px;">
-<div id="observablehq-1fd44dc8">
-  <div class="observablehq-viewof-selected_indicator"></div>
-  <div class="observablehq-key"></div>
-  <div class="observablehq-viewof-anim_frame_year"></div>
-  <div class="observablehq-chart"></div>
-</div></div>
+  <style>
+  .observable-container {
+    width: 85%;
+    height: 800px;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="observable-container">
+  <div id="observablehq-1fd44dc8">
+    <div class="observablehq-viewof-selected_indicator"></div>
+    <div class="observablehq-key"></div>
+    <div class="observablehq-viewof-anim_frame_year"></div>
+    <div class="observablehq-chart"></div>
+  </div>
+</div>
+
 <script type="module">
   import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
   import define from "https://api.observablehq.com/@theohonohan/birthright-indicators-1985-2020-version-of-16-june.js?v=3";
@@ -17,5 +27,6 @@
     if (name === "chart") return Inspector.into("#observablehq-1fd44dc8 .observablehq-chart")();
   });
 </script>
+  
 </body>
 </html>
