@@ -6,30 +6,37 @@
     height: 800px;
     margin: 0 auto;
   }
-
-  .controls {
+.controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
-   
-  .observablehq-viewof-selected_indicator {
-    flex: 0 0 auto;
-  }
-    
-  .observablehq-key {
-    flex: 0 0 auto;
-  }
+  gap: 1.5rem;
+  width: 100%;
+}
 
-  .observablehq-viewof-anim_frame_year {
-    flex: 1;
-  }
-  
-  .observablehq-viewof-anim_frame_year input {
-    width: 100%;
-  }
-  input[type="range"] {
-    width: 100% !important;
-  }
+.controls > .observablehq-viewof-selected_indicator {
+  flex: 0 0 auto;
+}
+
+.controls > .observablehq-key {
+  flex: 0 0 auto;
+}
+
+.controls > .observablehq-viewof-anim_frame_year {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Scrubber internals */
+.controls > .observablehq-viewof-anim_frame_year form {
+  width: 100% !important;
+}
+
+.controls > .observablehq-viewof-anim_frame_year form label {
+  flex: 1 1 auto;
+}
+
+.controls > .observablehq-viewof-anim_frame_year form input[type="range"] {
+  width: 100% !important;
 }
 </style>
 
