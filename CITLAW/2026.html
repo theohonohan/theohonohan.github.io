@@ -75,9 +75,9 @@ label output {
 <div class="observable-container">
   <div id="observablehq-e13dee80">
     <div class="controls">
-      <div class="observablehq-viewof-selected_indicator"></div>
+      <div class="observablehq-viewof-selected_indicator my-text"></div>
       <div class="observablehq-key"></div>
-      <div class="observablehq-viewof-anim_frame_year"></div>
+      <div class="observablehq-viewof-anim_frame_year my-text"></div>
     </div>
     <div class="observablehq-chart"></div>
     <div class="observablehq-update" style="display: none;"></div>
@@ -94,6 +94,28 @@ label output {
     if (name === "update") return Inspector.into("#observablehq-e13dee80 .observablehq-update")();
   });
 </script>
+<label>
+  Font size:
+  <input type="range" id="fontSizeSlider" min="8" max="48" value="18">
+  <span id="fontSizeValue">18px</span>
+</label>
 
+<script>
+const slider = document.getElementById('fontSizeSlider');
+const value = document.getElementById('fontSizeValue');
+
+slider.addEventListener('input', () => {
+  const size = slider.value + 'px';
+
+  document.querySelectorAll('.my-text').forEach(el => {
+    el.style.fontSize = size;
+  });
+
+  value.textContent = size;
+});
+</script>
+
+
+  
 </body>
 </html>
