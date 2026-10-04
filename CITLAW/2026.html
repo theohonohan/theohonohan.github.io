@@ -70,6 +70,11 @@ label output {
   margin-left: 0.4em;
   white-space: nowrap;
 }
+
+.my-text {
+  font-size: 30px;
+}
+
 </style>
 
 <div class="observable-container">
@@ -94,26 +99,5 @@ label output {
     if (name === "update") return Inspector.into("#observablehq-e13dee80 .observablehq-update")();
   });
 </script>
-<label>
-  Font size:
-  <input type="range" id="fontSizeSlider" step="0.1" min="8" max="48" value="18">
-  <span id="fontSizeValue">18px</span>
-</label>
-
-<script>
-const slider = document.getElementById('fontSizeSlider');
-const value = document.getElementById('fontSizeValue');
-
-slider.addEventListener('input', () => {
-  const size = slider.value + 'px';
-
-  document.querySelectorAll('.my-text').forEach(el => {
-    el.style.fontSize = size;
-  });
-
-  value.textContent = size;
-});
-</script>
-
 </body>
 </html>
