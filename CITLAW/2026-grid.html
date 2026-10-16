@@ -1,0 +1,167 @@
+<html>
+<body>
+  
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.observable-container {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0 auto;
+  padding: 0.75rem;
+
+  display: grid;
+  grid-template-rows: minmax(0, auto) minmax(0, 1fr);
+  gap: 0.75rem;
+
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#observablehq-e13dee80 {
+  display: grid;
+  grid-template-areas:
+    "controls"
+    "chart";
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.75rem;
+
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+.controls {
+  grid-area: controls;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 1rem;
+
+  min-width: 0;
+}
+
+.controls > * {
+  min-width: 0;
+}
+
+.controls > .observablehq-viewof-selected_indicator,
+.controls > .observablehq-key,
+.controls > .observablehq-viewof-anim_frame_year {
+  width: 100%;
+  min-width: 0;
+}
+
+.observablehq-viewof-anim_frame_year form {
+  width: 100% !important;
+}
+
+form {
+  margin: auto;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  gap: 0.4rem;
+}
+
+label input[type="range"] {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+label output {
+  white-space: nowrap;
+}
+
+.my-text {
+  font-size: 1.25rem;
+}
+
+.observablehq-chart {
+  grid-area: chart;
+
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.observablehq-chart svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .observable-container {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  #observablehq-e13dee80 {
+    height: auto;
+    grid-template-rows: auto minmax(60vh, 1fr);
+    overflow: visible;
+  }
+
+  .controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .my-text {
+    font-size: 1rem;
+  }
+
+  .observablehq-chart {
+    min-height: 60vh;
+    overflow: auto;
+  }
+
+  .observablehq-chart svg {
+    height: auto;
+    min-height: 60vh;
+  }
+}
+
+
+<div class="observable-container">
+  <div id="observablehq-e13dee80">
+    <div class="controls">
+      <div class="observablehq-viewof-selected_indicator my-text"></div>
+      <div class="observablehq-key"></div>
+      <div class="observablehq-viewof-anim_frame_year my-text"></div>
+    </div>
+    <div class="observablehq-chart"></div>
+    <div class="observablehq-update" style="display: none;"></div>
+  </div>
+</div>
+<script type="module">
+  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+  import define from "https://api.observablehq.com/@theohonohan/13-oct-2026-birthright-indicators-1985-2020.js?v=3";
+  (new Runtime).module(define, name => {
+    if (name === "viewof selected_indicator") return Inspector.into("#observablehq-e13dee80 .observablehq-viewof-selected_indicator")();
+    if (name === "key") return Inspector.into("#observablehq-e13dee80 .observablehq-key")();
+    if (name === "viewof anim_frame_year") return Inspector.into("#observablehq-e13dee80 .observablehq-viewof-anim_frame_year")();
+    if (name === "chart") return Inspector.into("#observablehq-e13dee80 .observablehq-chart")();
+    if (name === "update") return Inspector.into("#observablehq-e13dee80 .observablehq-update")();
+  });
+</script>
+</body>
+</html>
