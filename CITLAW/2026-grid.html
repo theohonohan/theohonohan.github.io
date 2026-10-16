@@ -129,6 +129,21 @@ label output {
     font-size: 1rem;
   }
 
+/* Allow the legend's grid item to shrink */
+.controls > .observablehq-key {
+  min-width: 0;
+  width: 100%;
+}
+
+/* Make the legend SVG fit its column */
+.observablehq-key svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-width: 0;
+}
+
   .observablehq-chart {
     min-height: 60vh;
     overflow: auto;
